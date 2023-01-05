@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <title>Steam Punk Shooter Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <audio src="laser1.wav" preload="auto" id="laserSound"></audio>
+    <audio src="explosion2.wav" preload="auto" id="expSound"></audio>
+    <audio src="playerExp.mp3" preload="auto" id="playerExpSound"></audio>
+    <audio src="slideWhistlw.wav" preload="auto" id="luckySound"></audio>
+    <audio src="clap.ogg" preload="auto" id="clapping"></audio>
+
+    <div class="container">
+      <div class="scoreBar">
+        <h1 class="scoreLabel" id="scoreLabel">
+          Score <span class="score" id="score">0</span>
+        </h1>
+        <h1 class="health" id="health">
+          Player Health <span class="HealthScore" id="healthScore">6</span>
+        </h1>
+        <h1 class="timer" id="timer">Timer <span id="time">60</span></h1>
+        <h1 class="highScoreLabel" id="highScoreLabel">
+          Highest Score <span class="highSxore" id="highScore">0</span>
+        </h1>
+      </div>
+      <canvas class="canvas1" id="canvas1"> </canvas>
+
+      <button class="restartGame" id="restartGame">Start Game</button>
+      <h1 class="credit" id="credit">Art from Frank's Laboratory</h1>
+      <button class="hScoreResetBtn" id="hScoreResetBtn">
+        Reset High Score
+      </button>
+      <button class="upBtn" id="upBtn">UP</button>
+      <button class="downBtn" id="downBtn">DOWN</button>
+      <button class="shootBtn" id="shootBtn">FIRE</button>
+    </div>
+
+    <script src="sprites.js"></script>
+    <script src="utlilities.js"></script>
+    <script src="eventListners.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
