@@ -28,29 +28,53 @@ window.addEventListener("keyup", (e) => {
 });
 
 // touch control
-upBtn.addEventListener("touchstart", function (e) {
+upBtn.addEventListener("touchstart", (e) => {
   e.preventDefault();
   keys.touchUp.pressed = true
 });
-downBtn.addEventListener("touchstart", function (e) {
+downBtn.addEventListener("touchstart", (e) => {
   e.preventDefault();
 keys.touchDown.pressed = true;
   
 });
-upBtn.addEventListener("touchend", function (e) {
+upBtn.addEventListener("touchend", (e) => {
   e.preventDefault();
   keys.touchUp.pressed = false
 });
-downBtn.addEventListener("touchend", function (e) {
+downBtn.addEventListener("touchend", (e) => {
   e.preventDefault();
   keys.touchDown.pressed = false;
 });
-shootBtn.addEventListener("touchstart", function (e) {
+shootBtn.addEventListener("touchstart", (e) => {
   e.preventDefault();
-  keys.touchShoot.pressed = true;
+   console.log("shoot");
+  keys.touchShoot.pressed = true
+   if (keys.touchShoot.pressed) {
+     if (gameState) {
+       laserSound.play();
+       laserSound.volume = 0.05;
+     }
+     lasersArray.push(
+       new Laser({
+         pos: {
+           x: player.pos.x + player.width - 10,
+           y: player.pos.y + player.height / 2 - 10,
+         },
+         vel: {
+           x: 0,
+           y: 0,
+         },
+         width: 30,
+         height: 30,
+         color: "rgba(0, 255, 0, 0.5)",
+         imageSrc: "ballLightning.png",
+       })
+     );
+   }
 });
 
-// fireBtn.addEventListener("touchend", function (e) {
-//   e.preventDefault();
-//   keys.touchShoot.pressed = false
-// });
+shootBtn.addEventListener("touchend", (e) => {
+  e.preventDefault();
+  console.log('shoot end')
+  // keys.touchShoot.pressed = false
+});

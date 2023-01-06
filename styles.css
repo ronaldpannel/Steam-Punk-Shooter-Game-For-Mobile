@@ -3,6 +3,7 @@
   margin: o;
   box-sizing: border-box;
   font-family: "Bangers", cursive;
+  touch-action: none;
 }
 body {
   background-color: black;
@@ -86,8 +87,9 @@ button:hover {
 }
 .upBtn {
   position: absolute;
-  top: 160px;
-  left: 10px;
+  top: 180px;
+  left: 15px;
+  font-size: 25px;
   background-color: transparent;
   display: block;
   width: 50px;
@@ -98,8 +100,9 @@ button:hover {
 
 .downBtn {
   position: absolute;
-  top: 280px;
-  left: 10px;
+  top: 235px;
+  left: 15px;
+  font-size: 19px;
   background-color: transparent;
   display: block;
   width: 50px;
@@ -112,6 +115,7 @@ button:hover {
   position: absolute;
   top: 230px;
   right: 10px;
+  font-size: 25px;
   background-color: transparent;
   display: block;
   width: 50px;

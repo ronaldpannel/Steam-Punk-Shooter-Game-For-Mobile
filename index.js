@@ -155,17 +155,14 @@ function animate() {
     player.vel.y = -8;
   } else if (keys.arrowDown.pressed) {
     player.vel.y = 8;
-  } else {
-    player.vel.y = 0;
-  }
-  //player touch inputs
-  if (keys.touchUp.pressed) {
+  } else if (keys.touchUp.pressed) {
     player.vel.y = -8;
   } else if (keys.touchDown.pressed) {
     player.vel.y = 8;
   } else {
     player.vel.y = 0;
   }
+
   playerEnemyCollision();
   laserEnemyCollision();
   laserPowerUpCollision();

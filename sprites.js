@@ -345,7 +345,7 @@ function handlePowerUps() {
   }
 }
 function handleLasers() {
-  if (keys.s.pressed || keys.touchShoot.pressed) {
+  if (keys.s.pressed) {
     if (gameState) {
       laserSound.play();
       laserSound.volume = 0.05;
