@@ -8,6 +8,9 @@ const gameStartBtn = document.getElementById("restartGame");
 const credits = document.getElementById("credit");
 const resetHighScoreBtn = document.getElementById("hScoreResetBtn");
 const playerHealth = document.getElementById("healthScore");
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+const shootBtn = document.getElementById("shootBtn");
 
 let laserSound = document.getElementById("laserSound");
 let expSound = document.getElementById("expSound");
@@ -41,6 +44,15 @@ const keys = {
     pressed: false,
   },
   s: {
+    pressed: false,
+  },
+  touchUp: {
+    pressed: false,
+  },
+  touchDown: {
+    pressed: false,
+  },
+  touchShoot: {
     pressed: false,
   },
 };
@@ -142,6 +154,14 @@ function animate() {
   if (keys.arrowUp.pressed) {
     player.vel.y = -8;
   } else if (keys.arrowDown.pressed) {
+    player.vel.y = 8;
+  } else {
+    player.vel.y = 0;
+  }
+  //player touch inputs
+  if (keys.touchUp.pressed) {
+    player.vel.y = -8;
+  } else if (keys.touchDown.pressed) {
     player.vel.y = 8;
   } else {
     player.vel.y = 0;

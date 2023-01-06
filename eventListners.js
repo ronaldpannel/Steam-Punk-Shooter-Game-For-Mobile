@@ -11,7 +11,7 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "s") {
     lasersArray.lastKey === "s";
     keys.s.pressed = true;
-    
+
     handleLasers();
   }
 });
@@ -27,5 +27,30 @@ window.addEventListener("keyup", (e) => {
   }
 });
 
+// touch control
+upBtn.addEventListener("touchstart", function (e) {
+  e.preventDefault();
+  keys.touchUp.pressed = true
+});
+downBtn.addEventListener("touchstart", function (e) {
+  e.preventDefault();
+keys.touchDown.pressed = true;
+  
+});
+upBtn.addEventListener("touchend", function (e) {
+  e.preventDefault();
+  keys.touchUp.pressed = false
+});
+downBtn.addEventListener("touchend", function (e) {
+  e.preventDefault();
+  keys.touchDown.pressed = false;
+});
+shootBtn.addEventListener("touchstart", function (e) {
+  e.preventDefault();
+  keys.touchShoot.pressed = true;
+});
 
-
+// fireBtn.addEventListener("touchend", function (e) {
+//   e.preventDefault();
+//   keys.touchShoot.pressed = false
+// });
