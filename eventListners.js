@@ -11,7 +11,7 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "s") {
     lasersArray.lastKey === "s";
     keys.s.pressed = true;
-
+    
     handleLasers();
   }
 });
@@ -47,7 +47,6 @@ downBtn.addEventListener("touchend", (e) => {
 });
 shootBtn.addEventListener("touchstart", (e) => {
   e.preventDefault();
-   console.log("shoot");
   keys.touchShoot.pressed = true
    if (keys.touchShoot.pressed) {
      if (gameState) {
@@ -75,6 +74,11 @@ shootBtn.addEventListener("touchstart", (e) => {
 
 shootBtn.addEventListener("touchend", (e) => {
   e.preventDefault();
-  console.log('shoot end')
-  // keys.touchShoot.pressed = false
+ 
+  keys.touchShoot.pressed = false
 });
+
+
+
+
+
